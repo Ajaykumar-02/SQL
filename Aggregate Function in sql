@@ -1,0 +1,21 @@
+-- FUNCTIONS IN SQL -- 
+
+--users = table name-- 
+--gender,salary = column name--
+
+select * from users;
+
+-- AGGREGATE FUNCTIONS (Query)
+
+-- count()--
+select count(*) from users;
+select count(*) from users where gender = 'female';
+
+-- min() & max()--
+select min(salary)as min_sal,max(salary)as max_sal from users;
+
+-- sum() & avg()--
+select sum(salary)as total_sal from users
+select avg(salary)as avg_sal from users;
+select gender, avg(salary)as avg_sal from users group by gender;
+select gender, sum(salary)as avg_sal from users group by gender;
