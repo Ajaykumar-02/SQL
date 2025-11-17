@@ -1,0 +1,17 @@
+-- STRING FUNCTIONS--
+-- LENGTH() 
+SELECT name, length(name)as name_len from users;
+
+-- lower() and upper()
+SELECT name, lower(name) as lower ,upper(name)as upper from users;
+
+-- Concat()
+SELECT CONCAT(name, ' <', email, '>') AS user_contact, now()as time FROM users;
+
+-- year(),day()& month()
+select name , year(date_of_birth) as birth_year from users;
+select name , month(date_of_birth) as birth_month from users;
+select name , day(date_of_birth) as birth_day from users;
+
+-- DateDiff()
+SELECT name, DATEDIFF(CURDATE(), date_of_birth) AS days_lived FROM users;
