@@ -1,0 +1,2 @@
+-- conditional function 
+Select name,age,if(age='20','adult','noadult')as is_female from users;
