@@ -1,0 +1,17 @@
+use startersql;
+select * from users;
+select * from addresses;
+-- JOINS IN SQL --
+
+-- INNER JOIN 
+select  users.name,addresses.city,addresses.state,users.gender,addresses.id as addresses_id
+from users
+INNER JOIN addresses ON users.id = addresses.user_id;
+-- LEFT JOIN
+select  users.name,addresses.city,addresses.state,users.gender,addresses.id as addresses_id
+from users
+LEFT JOIN addresses ON users.id = addresses.user_id;
+-- RIGHT JOIN
+select  users.name,addresses.city,addresses.state,users.gender,addresses.id as addresses_id
+from users
+RIGHT JOIN addresses ON users.id = addresses.user_id;
