@@ -1,0 +1,2 @@
+CREATE DATABASE startersql; -- for creating database 
+USE startersql; -- for use database 
