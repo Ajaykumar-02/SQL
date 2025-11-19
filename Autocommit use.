@@ -1,0 +1,12 @@
+-- use startersql;-- 
+ -- Auto commit uses 
+ set autocommit=0;
+ select * from users;
+ -- Lets suppose we need to remove the id=6  data ,
+--  delete  from users where id =7;  -- but by mistake we remove id =7  
+ -- we use rollback to get id=7 data
+  rollback; -- we comment rollback after we get the id=7 data.
+ -- delete  from users where id =6; -- we remove the id =6 
+ commit; -- To finally we remove correct data to confim
+
+ 
