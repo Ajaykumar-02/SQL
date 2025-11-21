@@ -1,0 +1,16 @@
+use startersql;
+-- Step 1: Add a referred_by_id Column 
+-- alter table users
+-- ADD COLUMN referred_by_id INT;
+
+-- Step 2: Insert Referral Data 
+-- UPDATE users SET referred_by_id = 1 WHERE id IN (2, 3,10,18,15,20); -- User 1 referred Users 2 and user 3 and user 10
+-- UPDATE users SET referred_by_id = 2 WHERE id = 4; -- User 2 referred User 4 and other will be null 
+
+-- Step 3: Use a Self JOIN to Get Referrer Names 
+SELECT
+ a.id,
+ a.name AS user_name,
+ b.name AS referred_by
+FROM users a
+LEFT JOIN users b ON a.referred_by_id = b.id;
