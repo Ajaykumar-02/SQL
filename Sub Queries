@@ -1,0 +1,12 @@
+use startersql;
+
+-- Sub Queries
+select AVG(salary) FROM users;
+-- select * from users where salary > ( select AVG(salary) FROM users );
+-- multiple use of sub queries 
+select id , name, referred_by_id From users
+where referred_by_id in
+( select id from users where salary <(select avg(salary) from users));
+-- Other placed Subqueries
+select name,salary,( select AVG(salary) From users) AS avg_salary FROM users ; 
+ 
