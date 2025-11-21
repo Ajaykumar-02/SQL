@@ -1,0 +1,16 @@
+use startersql;
+
+-- Group By 
+-- select gender , AVG(salary) AS 'avg'from users group by gender;
+-- Group by with count 
+-- select gender,AVG(salary) AS 'Avg Sal',COUNT(*) AS 'Count' From users group by gender; 
+-- Having
+select gender,AVG(salary) AS 'Avg Sal',COUNT(*) AS 'Count' 
+From users WHERE id<5000 
+group by gender  having AVG(salary)<61000; 
+--  WITH ROLLUP 
+select gender,AVG(salary) AS 'Avg Sal',COUNT(*) AS 'Count' 
+From users WHERE id<5000 
+group by gender WITH ROLLUP ; 
+
+
