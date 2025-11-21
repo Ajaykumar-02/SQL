@@ -1,0 +1,12 @@
+-- LIMIT  
+SELECT * FROM users 
+order by id 
+limit 5 ; -- (id 1 to 5 ) 
+-- LIMIT with OFFSET 
+SELECT * FROM users 
+order by id 
+limit 5 OFFSET 10 ; -- ( 10 = 11,12,13,14,15)
+-- Alternative syntex to use LIMIT With OFFSET 
+SELECT * FROM users 
+order by id 
+limit 3 , 5 ; -- ( 3 = 4 to 8)
