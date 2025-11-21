@@ -1,0 +1,18 @@
+use startersql;
+-- Create the Trigger
+DELIMITER $$
+CREATE TRIGGER after_user_insert
+AFTER INSERT ON users
+FOR EACH ROW
+BEGIN
+ INSERT INTO user_log (user_id, name)
+ VALUES (NEW.id, NEW.name);
+END$$
+DELIMITER ; 
+insert into users(name,email,gender,date_of_birth,salary)
+values('roh','r@gmail.com','male','1900-02-02',65000);
+
+select * from user_log;
+
+-- Dropping a Trigger
+DROP TRIGGER IF EXISTS after_user_insert; 
