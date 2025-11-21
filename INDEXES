@@ -1,0 +1,12 @@
+use startersql;
+-- Viewing Indexes on a Table
+SHOW INDEXES FROM users;
+
+-- Creating a Single-Column Index 
+CREATE INDEX idx_gender ON users(gender);
+
+-- MULTI COLUMN INDEX
+CREATE INDEX idx_gender_salary ON users(gender,salary); 
+
+-- DROP INDEX
+DROP INDEX idx_gender ON users; 
