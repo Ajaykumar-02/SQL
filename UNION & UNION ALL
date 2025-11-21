@@ -1,0 +1,20 @@
+use startersql;
+select * from users;
+select * from admin_users;
+-- UNION ( combine result & remove duplicates by defult) 
+select name,email,'user' as Role From users 
+union
+select name,email,'admin' as Role From admin_users;
+ 
+-- Union all ( combine result & Keeps duplicates by defult)
+select name,email,'user' as Role From users
+union all
+select name,email,'admin' as Role From admin_users; 
+
+-- ORDER BY ( max DOB at top EX=1984 & At last EX=2001 )
+select name,email,date_of_birth,'user' as Role From users
+union 
+select name,email,date_of_birth,'admin' as Role From admin_users
+order by date_of_birth ; 
+
+-- Adding separate roles (EX = 'user' as Role)
