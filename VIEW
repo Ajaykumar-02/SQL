@@ -1,0 +1,10 @@
+use startersql;
+-- CREATE VIEW 
+CREATE VIEW rich_users AS
+SELECT * FROM users where salary >70000;
+
+-- SEE THE VIEW
+ SELECT * FROM rich_users ; 
+
+--  IF anytime date will be update (VIEW) Automatically upadate in real time data : suppose
+-- UPDATE users SET salary = 30000 WHERE ID =2 ; ( before id=2 is >70000 but this time < 70000 so view no show the id 2 in this time auto update )
