@@ -1,0 +1,10 @@
+use startersql;
+-- Wildcard Operators
+-- %  
+select * from users where name LIKE '%a' ; -- ( name end with a )
+select * from users where name LIKE 'a%' ; -- ( name start with a )
+ -- _
+select * from users where name LIKE '_a%' ; -- ( Second letter is 'a' )
+select * from users where name LIKE '_a_h%' ; -- ( Second letter is 'a' & last letter is 'h' )
+ 
+ 
